@@ -8,18 +8,20 @@ pipeline{
             steps{
                 // mvn test
                 sh 'mvn --version'
+                sh 'mvn test'
             }
         }
         stage("build"){
             steps{
                 // mvn install
+                sh 'mvn install'
                 
             }
         }
         stage("test- deploy"){
             steps{
                 //deploy on container - tomcat10
-                
+                echo ' deploy on test'
             }
         }
     }
