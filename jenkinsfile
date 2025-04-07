@@ -1,0 +1,37 @@
+pipeline{
+    agent any
+    tools {
+        maven 'Maven' 
+    }    
+    stages{
+        stage("test"){
+            steps{
+                // mvn test
+                sh 'mvn --version'
+            }
+        }
+        stage("build"){
+            steps{
+                // mvn install
+                
+            }
+        }
+        stage("test- deploy"){
+            steps{
+                //deploy on container - tomcat10
+                
+            }
+        }
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}
